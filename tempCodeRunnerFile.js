@@ -1,3 +1,1 @@
-t/export karke use karti ho.*/
-
-conso
+console.log(add(5,2));

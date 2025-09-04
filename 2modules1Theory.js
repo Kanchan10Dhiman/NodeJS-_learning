@@ -32,9 +32,10 @@ Tum ek file ka code dusri file me reuse kar sakti ho.
 
 -->Maintainability
 Large project ko chhote-chhote modules me tod ke maintain karna easy ho jaata hai.
-
+--------------------------------------------------------------------
+module.exports kya hai?
+Ye original object hai jise Node.js return karta hai jab tum require('./file') likhte ho.
 */
-
 
 /*------------------------------------------------------------------
 MODULES ARE FILS JO HUM BANTE H, APP.JS ,MATH.JS etc--OR HME EXPORT KRNA PDTA H JO B ACCESSIBLE KRWANA H ANOTHER MODULE ME.

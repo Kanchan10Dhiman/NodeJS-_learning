@@ -26,3 +26,14 @@ console.log("7. host name:",os.hostname());
 
 //8.get network interfaces--os.networkInterfaces() tells you about all IP addresses, MAC addresses, and network details of your computer.
 console.log("8.networ interfaces", os.networkInterfaces());
+
+//9. get CPU info-->os.cpus() is used to get details about your processor(s) — model, speed, and usage time of each core.-->os.cpus() → returns an array of objects, each object giving information about one CPU/core in your system.
+console.log("9. CPU info:", os.cpus());
+
+//10.get temorary directory-->os.tmpdir() = system’s temporary folder path Used when you want to work with files/data that don’t need to be stored permanently.-->special folder where the operating system (and applications) store temporary files.These files are not permanent — they may be deleted automatically by the system when space is needed or when you restart your computer.
+console.log("temporary directory: ",os.tmpdir());
+
+//11. get os name(eg.windows_NT on windows, linux on linux, 'darwin on macos
+console.log(" 11. os'name: ",os.type()); //Windows_NT on windows 
+
+

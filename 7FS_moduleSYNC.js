@@ -56,13 +56,16 @@ const updatedContent = fs.readFileSync(filepath, "utf-8");
 console.log(updatedContent);
 
 //DELETE FILE---------------------------
+//* del file by its path--fs.unlinkSync(filepath);
 
+// const filedel=fs.unlinkSync(filepath);
+//noticed ki test2.txt del ho chuki h
 
-
-
-
-
-
+//REname file----------------------------
+const updatedFileName="updateTest.txt";
+const newfilepath=path.join(__dirname,updatedFileName);
+const renameFile=fs.renameSync(filepath,newfilepath);
+console.log(renameFile);
 
 
 

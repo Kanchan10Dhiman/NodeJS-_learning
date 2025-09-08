@@ -23,7 +23,7 @@ const path=require("path");
 //CRAETE FILE----------
 
 // fs.writeFileSync("./test.txt", "data of the file ");
-const filename="test2.txt";
+const filename="filesync.txt";
 const filepath=path.join(__dirname, filename);
 
 const writefile=fs.writeFileSync(filename, "this is the created file ", "utf-8");
@@ -62,7 +62,7 @@ console.log(updatedContent);
 //noticed ki test2.txt del ho chuki h
 
 //REname file----------------------------
-const updatedFileName="updateTest.txt";
+const updatedFileName="fileSyncupdated.txt";
 const newfilepath=path.join(__dirname,updatedFileName);
 const renameFile=fs.renameSync(filepath,newfilepath);
 console.log(renameFile);

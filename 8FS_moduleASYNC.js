@@ -42,8 +42,17 @@ const readfile=fs.readFile(filepath,"utf-8",(err,data)=>{
 });
 
 //UPDATE FILE
+const appenddata=fs.appendFile(filepath, "this data is appended now", "utf-8", (err)=>{
+    if(err) console.error(err);
+    else console.log("data appended successfully");
+})
 
-
+//DELETE FILE
+//fs.unlink(path,callback)
+fs.unlink(filepath,(err)=>{
+    if(err) console.error(err);
+    else console.log("file deleted successfully");
+});
 
 
 

@@ -1,1 +1,1 @@
-const filedel=fs.unlinkSync(filepath);
+const filename="asyncfile.txt";

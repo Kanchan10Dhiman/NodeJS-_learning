@@ -36,7 +36,13 @@ const writefile=fs.writeFile(filename, "this is the async file " ,"utf-8" , (err
 });
 
 //READ FILE-->fs.readFile(path,options,callback)-->in callback we pass the parameter(err,data)-------->err → error object ya null-->data → file ka content (Buffer ya string)
-const readfile=fs.readFile(filename);
+const readfile=fs.readFile(filepath,"utf-8",(err,data)=>{
+    if (err) console.error(err);
+    else console.log(data);
+});
+
+//UPDATE FILE
+
 
 
 

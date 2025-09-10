@@ -51,3 +51,13 @@ const updatefile= async()=>{
 
 };
 updatefile();
+//DELETED FILE
+const delfile= async()=>{
+    try{
+        await fs.unlink(filepath);
+        console.log("deleted successfully ");
+    }catch(err){
+        console.error(err);
+    }
+};
+delfile();

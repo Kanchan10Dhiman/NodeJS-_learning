@@ -1,0 +1,53 @@
+//ASYNC-AWAIT -->ye functions k sath hi use ho skte h 
+
+//read folder or to get the folder's file list
+// const readfolder= async ()=>{
+//     try{
+//         await fs.promises.readdir(filepath);
+//     }
+//     catch(err) {
+//         console.error(err);
+//     }
+// };
+
+const fs=require("fs/promises");
+const path=require("path");
+
+const filename="ayncAwait.txt";
+const filepath=path.join(__dirname, filename);
+
+//CREATE FILE USING AYNC-AWAIT
+const writefile1 = async()=>{
+    try{
+        await fs.writeFile(filepath, "this is the async wait file", "utf-8");
+        console.log("file created successfully");
+    }
+    catch (err){
+        console.error(err);
+    }
+};
+writefile1();
+
+//READ FILE
+const readfile = async ()=>{
+    try{
+        const data= await fs.readFile(filepath,"utf-8");
+    console.log(data);
+    }catch (err){
+        console.error(err);
+    }
+};
+readfile();
+
+//UPDATE FILE
+const updatefile= async()=>{
+    try{
+    await fs.appendFile(filepath, " added the updated data", "utf-8");
+    console.log("updated successfully");
+    }
+    catch(err){
+        console.log(err);
+    }
+
+};
+updatefile();

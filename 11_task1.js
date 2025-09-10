@@ -1,0 +1,1 @@
+//a simple task related to EventEmitter

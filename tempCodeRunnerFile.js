@@ -1,42 +1,66 @@
-//FS MODULE PROMISES
-// const fs=require("fs"); agr promises nhi likhn acahhte bar bar hr crud operation me to ye likh skte ho
+//a simple task related to EventEmitter
+/* create a program using node.js EventEmitter that:
+//OBJECTIVE
+-->listens for multiple types of user events(loin,logout,purchase, profile update)
+-->tracks how many times each event is emitted
+-->logs a summary of all event occurrences when a special summary eent is triggered.
 
-const fs=("fs/promises")
-const path=require("path");
+//REQUIREMENT
+-->create atleast four custom events(user-login,logout,purchase, profile update)
+-->emit these events multiple times  with diff arguemnets(eg username.purchased  item)
+-->track and store the count of each event type
+-->define a summary event that logs a detailed report of how many times each event was triggered (Log = record rakhna (likhit ya digital form me)
 
-const filename="fsPromises.txt";
-const filepath=path.join(__dirname, filename);
+*/
+const EventEmitter=require("events");
+const emitter=new EventEmitter();
 
-// const file=__dirname;
-// fs.promises
-// .readdir(file)
-// .then((data)=> console.log(data))
-// .catch((err)=> console.error(err))
+//-->Object → better for event counts (because event names are meaningful).//Array → only good if you care about positions, not names.
+//eventCounts is an object that stores counts for each event
 
-//WRITE FILE USING PROMISES
+const eventCount={
+    "user-login" :0,
+    "user-logout":0,
+    "item-purchased":0,
+    "update-profile":0
+};
 
-//fs.promises.writeFile(path,data,options).then().catch
+//EVENT LISTENER/HANDLER
+emitter.on("user-login", (username)=>{
+    eventCount["user-login"]++;//Yaha "user-logout" ek string hai jisme hyphen (-) hai.jab bhi property name me special characters (space, - etc.) ho, hamesha [] use karna padta hai
+    console.log(`${username} logged in`);
+});
 
-//fs.promises.writeFile
-fs.writeFile(filepath, "hello this is promise file", "utf-8")
-.then(console.log("file craeted sucessfully"))
-.catch((err)=>{
-    console.error(err);
+emitter.on("user-logout" ,(username)=>{
+    eventCount["user-logout"]++;
+    console.log(`${username} logged out`)
+});
+
+emitter.on("item-purchased", (item)=>{
+    eventCount["item-purchased"]++;
+    console.log(`item puschased by user : ${item}`);
+});
+
+emitter.on("update-profile", (update, field)=>{
+    eventCount["update-profile"]++;
+    console.log(`update data is ${field} from ${update}`)
+});
+
+emitter.on("summary",()=>{
+    console.log(eventCount);
 })
 
-//READ FILE-->fs.promises.readFile
-fs.readFile(filepath, "utf-8")
-.then((data)=>console.log(data , "file read successfully"))
-.catch((err)=>{
-    console.error(err);
-})
+//emit\trigger events
+emitter.emit("user-login", "kanchan Dhiman");
+emitter.emit("user-login", "kanchan baby");
+emitter.emit("item-purchased", "laptop" );
+emitter.emit("update-profile", "kanchan", "kanchu");
+emitter.emit("user-logout", "kanchan");
 
-//UPDATE FILE-->fs.promises.appendFile
-fs.appendFile(filepath, "this is appeneded in the file" , "utf-8")
-.then(console.log("successfulluy updated"))
-.catch((err)=>console.error(err));
+emitter.emit("summary");
 
-//DELETE FILE
-// fs.promises.unlink(filepath)
-// .catch(console.log("sucessfully deleted"))
-// .then((err)=>console.error(err));
+
+
+
+
+

@@ -12,18 +12,63 @@ Website’s server replies with HTTP response.
 PORT-->A port ek door/entry point hota hai jisse ek computer ke andar chal raha program baahar se requests accept karta hai.Jab tum server banate ho, to usse bolna padta hai → “tum kis darwaze (port) se requests sunoge?”-->Server bhi aisa hi hota hai → ek hi computer (IP) par multiple services chal sakti hain, har ek alag port number par
 */
 
+/*
+Server ke paas khud ka permanent data nahi hota.Uska kaam bas ye hai:
+-->Client se request lena
+-->Database se data mangaana (agar zarurat ho)
+-->Data ko process karke client ko wapas bhejna
+
+🔹 Database ke paas asli data hota hai (jaise users ki details, orders, products, messages etc.).
+Server jab bhi chahe, database ko bolega → "Mujhe ye data do" ya "Ye naya data save kar lo".
+*/
+//------------------------------------------------------ 
 //acess http module
+// const http= require("http");
+// // const server=http.createServer();
+// const server=http.createServer((req,res)=>{
+//     if(req.url=== "/"){
+//         res.write("helo i am here to listen you dear");
+//         res.end();
+//     }
+// });
+// const port=3000;
+// server.listen(port, ()=>{
+//     console.log(`listening on port ${port}`);
+// });
+//---------------------
+
 const http= require("http");
-// const server=http.createServer();
-const server=http.createServer((req,res)=>{
-    if(req.url=== "/");{
-        res.write("helo i am here to listen you dear");
-        res.end();
-    }
+
+//create server 
+//we use this callback function to handlle and processing the request
+// const myserver=http.createServer((req,res)=>{
+//    console.log("request receives new !");
+//    res.end("hello from server");
+// });
+
+// myserver.listen(8000, ()=>{
+//     console.log("server starteed");
+// });//ek port pe ek hi server chlega..
+
+const myserver = http.createServer((req, res) => {
+   if(req.url === "/") {
+       res.end("Hello from home page");
+   } else if(req.url === "/about") {
+       res.end("This is the about page");
+   } else {
+       res.end("Page not found");
+   }
 });
-const port=3000;
-server.listen(port, ()=>{
-    console.log(`listening on port ${port}`);
-})
+
+myserver.listen(8000, ()=>{
+    console.log("server starteed");
+});//ek port pe ek hi server chlega..
+
+
+
+
+
+
+
 
 

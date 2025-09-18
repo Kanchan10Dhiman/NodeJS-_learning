@@ -51,6 +51,7 @@ const http= require("http");
 // });//ek port pe ek hi server chlega..
 
 const myserver = http.createServer((req, res) => {
+
    if(req.url === "/") {
        res.end("Hello from home page");
    } else if(req.url === "/about") {
@@ -59,7 +60,7 @@ const myserver = http.createServer((req, res) => {
        res.end("Page not found");
    }
 });
-
+//👉 “Hey browser, request internet par mat bhejna… mere apne hi computer me jo server chal raha hai usi ko bhejna.”Agar tu kisi aur ka server access karti (e.g. www.google.com), to wo request Google ke servers tak jaati.//listen is like turning the server ON — bina iske server duniya ko accessible hi nahi hoga.
 myserver.listen(8000, ()=>{
     console.log("server starteed");
 });//ek port pe ek hi server chlega..

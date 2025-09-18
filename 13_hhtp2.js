@@ -3,7 +3,7 @@ const http=require("http");
 const fs=require("fs");
 
 const server=http.createServer((req,res)=>{
-    const log= `${Date.now()} :${req.url} new request recieved \n`;
+    const log= `${Date.now()} : ${req.url} new request recieved \n`;
     fs.appendFile("log.txt", log,(err,data)=>{
         res.end("hello from server again")
     });

@@ -29,9 +29,7 @@ Query (?k=laptop&ref=nb_sb_noss_1) = Ask receptionist “Show me laptops, refere
 Fragment (#customerReviews) = Directly flip to Customer Reviews page
 */
 
-//✅ In short:req.url → directly available from http server, gives only the raw URL string.url module → helps you parse and work with URL parts (protocol, host, query params, etc.).
-
-// 
+//✅ In short:req.url → directly available from http server, gives only the raw URL //string.url module → helps you parse and work with URL parts (protocol, host, query params, etc.).
 
 // const url = require("url");
 

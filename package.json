@@ -1,0 +1,30 @@
+{
+  "name": "node_js",
+  "version": "1.0.0",
+  "description": "A simple Node.js learning",
+  "keywords": [
+    "node",
+    "js",
+    "learning"
+  ],
+  "homepage": "https://github.com/Kanchan10Dhiman/NodeJS-_learning#readme",
+  "bugs": {
+    "url": "https://github.com/Kanchan10Dhiman/NodeJS-_learning/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kanchan10Dhiman/NodeJS-_learning.git"
+  },
+  "license": "ISC",
+  "author": "Kanchan_dhiman",
+  "type": "commonjs",
+  "main": "11_EVENTS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
+
+

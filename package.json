@@ -2,6 +2,7 @@
   "name": "node_js",
   "version": "1.0.0",
   "description": "A simple Node.js learning",
+  "type": "commonjs",
   "keywords": [
     "node",
     "js",
@@ -17,14 +18,12 @@
   },
   "license": "ISC",
   "author": "Kanchan_dhiman",
-  "type": "commonjs",
   "main": "11_EVENTS.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "express": "^5.1.0",
     "nodemon": "^3.1.10"
   }
 }
-
-
